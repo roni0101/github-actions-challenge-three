@@ -5,14 +5,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout
-              uses: actions/checkout
+              uses: actions/checkout@v3
             - name: run
               run: python hello.py
     build:
         needs: test
         runs-on: ubunto-latest
         steps:
-              - uses: actions/checkout
+              - uses: actions/checkout@v3
               - uses: actions/upload-artifact
                 with:
                     name: hello-artifact
