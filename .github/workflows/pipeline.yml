@@ -1,0 +1,23 @@
+name: Pipiline
+on: push
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout
+            - name: run
+              run: python hello.py
+    build:
+        needs: test
+        runs-on: ubunto-latest
+        steps:
+              - uses: actions/checkout
+              - uses: actions/upload-artifact
+                with:
+                    name: hello-artifact
+                    path: hello.py
+
+
+
+              
